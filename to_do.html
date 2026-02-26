@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label >Ingresa una materia:</label>
+    <input type="text" id="matria">
+    <button onclick="agregarMateria()">Agregar</button>
+    <ul id="listaMaterias">
+    </ul>
+    <button onclick="limpiarLista()">Limpiar Lista</button>
+</body>
+
+<script>
+    function agregarMateria (){
+        let materia = document.getElementById("matria").value;
+        let lista = document.getElementById("listaMaterias");
+        let nuevoElemento = document.createElement("li");
+        nuevoElemento.textContent = materia;
+        console.log("Materia agregada:", materia);
+        lista.appendChild(nuevoElemento)
+        document.getElementById("matria").value = "";
+    }
+
+    function limpiarLista(){
+        let lista = document.getElementById("listaMaterias");
+        lista.innerHTML = "";
+    }
+</script>
+</html>
